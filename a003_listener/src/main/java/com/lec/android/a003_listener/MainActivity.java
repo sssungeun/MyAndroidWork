@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.lec.android.a003_listener.R;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvResult;
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
 
-        tvResult = findViewById(R.id.tvResult);
+        tvResult = findViewById(R.id.tvName);
         final LinearLayout ll = findViewById(R.id.ll);
         et = findViewById(R.id.et);
 
