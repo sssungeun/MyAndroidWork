@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         et = findViewById(R.id.et);
 
 
-        //방법2 : 익명클래스  (anoaymous class 사용)
+        //방법2 : 익명클래스  (anonymous class 사용)
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //클릭되었을 때 호출되는 메소드 (클릭 메소드 callback method)
