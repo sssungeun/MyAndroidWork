@@ -37,7 +37,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnVib2.setText("지정한 패턴으로 진동");
+        btnVib2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long [] pattern = {100, 300, 100, 700, 300, 2000}; //ms
+                //                  대기, 진동, 대기, 진동....
+                //  짝수인덱스 : 대기
+                //  홀수인덱스 : 진동
+                vibrator.vibrate(pattern, //진동패턴(배열)
+                        -1);      //반복
+                        //0 : 무한반복 , -1: 반복업슴
+                        //양의 정수 : 진동패턴배열의 해당 인덱스부터 진동 무한반복.
 
+            }
+        });
+
+        btnVib3.setText("무한반복으로 진동");
+        btnVib3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibrator.vibrate(
+                        new long[] {100, 1000, 100, 500, 100, 500, 100, 1000}
+                        , 0);
+            }
+        });
+        btnVib4.setText("진동 취소");
+        btnVib4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibrator.cancel(); //진동취소
+           }
+        });
 
     }
 }
