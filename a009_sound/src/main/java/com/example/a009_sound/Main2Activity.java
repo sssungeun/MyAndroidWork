@@ -53,19 +53,35 @@ public class Main2Activity extends AppCompatActivity {
             //SB 값 변경될때마다 호출
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+               //음악이 끝까지 연주 완료되었다면
+                if(seekBar.getMax() == progress && !fromUser){
+
+                    btnPlay.setVisibility(View.VISIBLE);
+                    btnPause.setVisibility(View.INVISIBLE);
+                    btnResume.setVisibility(View.INVISIBLE);
+                    btnStop.setVisibility(View.INVISIBLE);
+
+
+                    if(mp != null) mp.stop();
+
+                }
+
 
             }
 
             //드래그 시작(트랙킹) 하면 호출
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
+                isTracking = true;
             }
 
             //드래그 마치면 (트랙킹 종료) 하면 호출
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                pos = seekBar.getProgress();
+                if(mp != null) mp.seekTo(pos);
 
+                isTracking = false;
             }
         });
 
