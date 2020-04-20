@@ -67,7 +67,7 @@ public class Main3Activity extends AppCompatActivity {
 
 
         }else{
-            //정상 겨롸가 아닌 경우 처리
+            //정상 결과가 아닌 경우 처리
         }
 
 

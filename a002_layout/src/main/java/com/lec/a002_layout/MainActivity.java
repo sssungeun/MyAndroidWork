@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.constraint1);
 
         int ss = 100;
-        String tt = "하하호호";
+        String tt = "hihi~";
         char ch = 'a';
         short s = 200;
 

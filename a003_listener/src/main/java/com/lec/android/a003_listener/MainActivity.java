@@ -137,14 +137,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void changeText(View v){
         //Log.d(tag, message)
         //Log창의 Debug 메세지로 출력
-        Log.d("myapp", "버튼 1이 클릭되었습니다.");
+        Log.d("myapp", "버튼 1이 클릭되었습니다");
         tvResult.setText("버튼1이 클릭되었습니다");
     }
 
 
     @Override
     public void onClick(View v) {
-        Log.d("myapp","Clear 버튼이 클릭되었습니다.");
+        Log.d("myapp","Clear 버튼이 클릭되었습니다");
         tvResult.setText("Clear버튼이 클릭되었습니다.");
         et.setText("");
     }

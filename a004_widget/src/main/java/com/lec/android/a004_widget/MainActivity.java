@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //키보드가 눌릴때
-        //자판 키보드에만 반응 !
+        //자판 키보드에만 반응
         etPassword.setOnKeyListener(new View.OnKeyListener() {
             //keyCode : 눌린 키의 코드값
             @Override
