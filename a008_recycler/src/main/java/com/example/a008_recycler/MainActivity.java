@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 appendData(v);
             }
         });
-
     } // end onCreate()
 
     // 샘플데이터 가져오기
