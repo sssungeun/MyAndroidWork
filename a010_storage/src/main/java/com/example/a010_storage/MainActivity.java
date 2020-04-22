@@ -2,7 +2,10 @@ package com.example.a010_storage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,8 +38,18 @@ import java.io.PrintWriter;
  *      - openFileOutput() 를 사용하여 저장  (  FileOutputStream 객체 리턴함 )
  */
 
+// Device File Explore에서 생성된 파일 확인 가능
+// Pixel2폰의 경우
+    //      /data/data/com.example/a010_storage?files/myfile.txt
+//DML이나 일반적인
+//int값 받고 싶으면 SQLiteDatabase의 insert(), update(), delete() 사용해야 한다.
 
 public class MainActivity extends AppCompatActivity {
+    String dbName = "st_file2.db";
+    int dbVersion = 1;
+    MySQLiteOpenHelper4 helper4;
+    SQLiteDatabase db;
+    String tableName = "student";
     EditText et;
     Button btnAppend, btnRead;
     TextView tvResult;
@@ -50,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
         btnAppend = findViewById(R.id.btnAppend);
         btnRead = findViewById(R.id.btnRead);
         tvResult = findViewById(R.id.tvResult);
+
+        helper4 = new MySQLiteOpenHelper4(
+                this,
+                dbName,
+                null,
+                dbVersion
+        );
+
 
         //추가하기 버튼 클릭하면 파일에 추가로 지정하기
         btnAppend.setOnClickListener(new View.OnClickListener() {
