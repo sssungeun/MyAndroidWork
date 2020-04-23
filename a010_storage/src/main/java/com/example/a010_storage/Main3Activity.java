@@ -7,17 +7,18 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
-// SQLite3 : 안드로이드에 기본탑재된 모바일 용으로 제작된 경량화 DB
-//          C언어로 엔진이 제작되어 가볍다
-//          안드로이드에서 sqLite3 를 쉽게 사용할 수 있도록 SQLiteOpenHelper클래스제공
+/*
+ SQLite3 : 안드로이드에 기본탑재된 모바일 용으로 제작된 경량화 DB
+          C언어로 엔진이 제작되어 가볍다
+          안드로이드에서 sqLite3 를 쉽게 사용할 수 있도록 SQLiteOpenHelper클래스제공
 
-// SQLite 를 사용한 데이터 저장
-//   1. SQLiteOpenHelper 를 상속받은 클래스 정의
-//      onCreate(), onUpgrade() 작성
-//   2. 위 Helper 로부터 SQLiteDatabase  DB 객체 추출
-//   3. DML 명령은 : execSQL()
-//      SELECT 명령은 : rawQuery() --> 결과는 Cursor 객체 사용하여 다룸
-
+ SQLite 를 사용한 데이터 저장
+   1. SQLiteOpenHelper 를 상속받은 클래스 정의
+      onCreate(), onUpgrade() 작성
+   2. 위 Helper 로부터 SQLiteDatabase  DB 객체 추출
+   3. DML 명령은 : execSQL()
+      SELECT 명령은 : rawQuery() --> 결과는 Cursor 객체 사용하여 다룸
+*/
 
 
 public class Main3Activity extends AppCompatActivity {
