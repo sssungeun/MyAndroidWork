@@ -2,7 +2,13 @@ package com.example.a017_location;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.util.List;
+
 /**  위치기반 앱 : 사용자의 위치를 활용한 어플리케이션
  *
  *  LocationManager (위치 관리자): 안드로이드에서 위치제공자(LocationProvider)를 얻어오기 위한 객체
@@ -30,9 +36,24 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tvResult;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tvResult = findViewById(R.id.tvResult);
+        //위치관리자 객체 얻어오기
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        List<String> list = lm.getAllProviders(); //모든 가용한 위치 제공자 가져오기
+        String str = "[위치제공자] : 사용가능여부\n----------------------------\n";
+        for(String provider : list){
+            str += "[" + provider +"] : " + lm.isProviderEnabled(provider) + "\n";
+        }
+        tvResult.setText(str);
+
     }
 }
